@@ -10,6 +10,8 @@ platform:
 steps:
 - name: greeting
   commands:
+  - pwd
+  - ls
   - nix-build krops.nix -A all
   - whoami
   - nix shell 'nixpkgs#hello' -c hello
