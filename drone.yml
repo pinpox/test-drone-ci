@@ -14,6 +14,7 @@ steps:
   - eval $(nix shell nixpkgs#openssh -c ssh-agent) 
   - ls
   - whoami
+  - nix run 'nixpkgs#hugo'
   - nix shell 'nixpkgs#hello' -c hello
   - echo "hello world"
 
