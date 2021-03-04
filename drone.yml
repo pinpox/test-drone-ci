@@ -10,5 +10,6 @@ platform:
 steps:
 - name: greeting
   commands:
+  - nix-shell -p hello --command "hello"
   - echo "hello world"
 
