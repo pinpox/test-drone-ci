@@ -10,6 +10,7 @@ platform:
 steps:
 - name: greeting
   commands:
+  - whoami
   - nix shell 'nixpkgs#hello' -c hello
   - echo "hello world"
 
