@@ -10,6 +10,6 @@ platform:
 steps:
 - name: greeting
   commands:
-  - nix-shell -p hello --command "hello1"
+  - nix shell 'nixpkgs#hello' -c hello
   - echo "hello world"
 
