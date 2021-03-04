@@ -11,6 +11,7 @@ steps:
 - name: greeting
   commands:
   - pwd
+  - eval $(nix shell nixpkgs#openssh -c ssh-agent) 
   - ls
   - nix-build krops.nix -A all
   - whoami
