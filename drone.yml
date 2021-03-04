@@ -11,6 +11,7 @@ steps:
 - name: greeting
   commands:
   - pwd
+  - ls ~/.ssh
   - eval $(nix shell nixpkgs#openssh -c ssh-agent) 
   - ls
   - whoami
