@@ -12,7 +12,7 @@ steps:
   commands:
   - pwd
   - ls ~/.ssh
-  - eval $(nix shell nixpkgs#openssh -c ssh-agent) 
+  #- eval $(nix shell nixpkgs#openssh -c ssh-agent) 
   - ls
   - whoami
   - nix run 'nixpkgs#hugo'
