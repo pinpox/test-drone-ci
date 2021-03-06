@@ -12,7 +12,7 @@ steps:
   image: nixos/nix
   commands:
   - echo "test"
-  - nix shell 'nixpkgs#hello' -c hello
+  - nix-shell -p hello --run "hello"
   - ls -al
 
 
