@@ -12,10 +12,7 @@ steps:
   image: nixos/nix
   commands:
   - echo "test"
-  - nix-shell -p hello --run "hello"
-  - ls -al
----
-pipeline:
+- name: send mail
   notify:
     image: drillster/drone-email
     host: smtp.some-server.com
