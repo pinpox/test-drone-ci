@@ -14,7 +14,7 @@ steps:
   - echo "test"
 
 steps:
-  - name: notify:
+  - name: notify
     image: drillster/drone-email
     settings:
       from:
