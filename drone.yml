@@ -8,9 +8,10 @@ platform:
   arch: amd64
 
 steps:
-- name: backend
-  image: golang
+- name: nix
+  image: nixos/nix
   commands:
+  - echo "test"
   - nix shell 'nixpkgs#hello' -c hello
   - ls -al
 
