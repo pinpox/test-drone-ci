@@ -1,10 +1,30 @@
-pipeline:
-  notify:
+---
+kind: pipeline
+name: default
+type: docker
+
+platform:
+  os: linux
+  arch: amd64
+
+
+steps:
+- name: nix
+  image: nixos/nix
+  commands:
+  - echo "test"
+
+steps:
+  - name: notify
     image: drillster/drone-email
-    from: test@test.com
-    recipients: [ user@test.com ]
-    secrets: [ email_host, email_port, email_user, email_password ]
-
-
-
-
+    settings:
+      from:
+        from_secret: email_from
+      host:
+        from_secret: email_host
+      username:
+        from_secret: email_user
+      password:
+        from_secret: email_password
+      recipients:
+        - test@pablo.tools
