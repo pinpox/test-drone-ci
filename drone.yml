@@ -1,23 +1,20 @@
 ---
 kind: pipeline
-type: exec
 name: default
+type: docker
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: greeting
+- name: backend
+  image: golang
   commands:
-  - pwd
-  #- ls ~/.ssh
-  #- eval $(nix shell nixpkgs#openssh -c ssh-agent) 
-  - ls
-  - whoami
-  #- nix run 'nixpkgs#hugo'
   - nix shell 'nixpkgs#hello' -c hello
-  - echo "hello world"
+  - ls -al
+
+
 
 
 
