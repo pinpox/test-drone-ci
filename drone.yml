@@ -25,3 +25,4 @@ steps:
         from_secret: email_password
       recipients:
         - test@pablo.tools
+        
