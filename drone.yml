@@ -17,6 +17,7 @@ steps:
   - name: notify
     image: drillster/drone-email
     settings:
+      port: 465
       from:
         from_secret: email_from
       host:
