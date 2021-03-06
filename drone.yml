@@ -15,14 +15,15 @@ steps:
   - echo "test"
 
 steps:
-  - name: notify
-    image: drillster/drone-email
-    settings:
-      from: drone@pablo.tools
-      host: smtp.sendgrid.net
-      username: apikey
-      password:
-        from_secret: email_password
-      recipients:
-        - test@pablo.tools
-        
+- name: notify
+  image: drillster/drone-email
+  settings:
+    from: drone@pablo.tools
+    host: smtp.sendgrid.net
+    username: apikey
+    password:
+      from_secret: email_password
+    recipients:
+      - test@pablo.tools
+
+      from_secret: docker_password
