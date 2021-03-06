@@ -12,16 +12,21 @@ steps:
   image: nixos/nix
   commands:
   - echo "test"
-- name: send mail
-  notify:
-    image: drillster/drone-email
-    host: smtp.some-server.com
-    username: foo
-    password: bar
-    from: drone@your-domain.com
-    when:
-      status: [ changed, failure ]
 
+steps:
+  - name: notify:
+    image: drillster/drone-email
+    settings:
+      from:
+        from_secret: email_from
+      host:
+        from_secret: email_host
+      username:
+        from_secret: email_user
+      password: 12345
+        from_secret: email_password
+      recipients:
+        - test@pablo.tools
 
 
 
