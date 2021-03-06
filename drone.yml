@@ -13,8 +13,6 @@ steps:
   image: nixos/nix
   commands:
   - echo "test"
-
-steps:
 - name: notify
   image: drillster/drone-email
   settings:
