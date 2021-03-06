@@ -11,7 +11,7 @@ steps:
     from: drone@pablo.tools
     host: smtp.sendgrid.net
     username: apikey
-    password: 123
+    password:
       from_secret: email_password
     recipients:
       - test@pablo.tools
