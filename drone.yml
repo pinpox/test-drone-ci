@@ -3,16 +3,8 @@ kind: pipeline
 name: default
 type: docker
 
-platform:
-  os: linux
-  arch: amd64
-
 
 steps:
-- name: nix
-  image: nixos/nix
-  commands:
-  - echo "test"
 - name: notify
   image: drillster/drone-email
   settings:
@@ -23,5 +15,3 @@ steps:
       from_secret: email_password
     recipients:
       - test@pablo.tools
-
-      from_secret: docker_password
