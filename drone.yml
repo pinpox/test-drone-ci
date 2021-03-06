@@ -18,11 +18,9 @@ steps:
   - name: notify
     image: drillster/drone-email
     settings:
-      from:
-        from_secret: email_from
+      from: drone@pablo.tools
       host: smtp.sendgrid.net
-      username:
-        from_secret: email_user
+      username: apikey
       password:
         from_secret: email_password
       recipients:
